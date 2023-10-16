@@ -1,6 +1,8 @@
 import React from "react";
 
 const Catatan = () => {
+  // const [initialData, setInitialData] = useState(getInitialData());
+
   return (
     <>
       <header className="note">
@@ -9,11 +11,13 @@ const Catatan = () => {
 
       <main className="noteMain">
         <section className="sectionList">
-          <header className="listHeader"></header>
-          <span className="message note-list"></span>
+          SS
+          <header className="listHeader">SS</header>
+          <span className="message noteList">SS</span>
         </section>
         <section className="sectionArchive">
-          <header className="archiveHeader"></header>
+          AA
+          <header className="archiveHeader">SS</header>
         </section>
       </main>
     </>

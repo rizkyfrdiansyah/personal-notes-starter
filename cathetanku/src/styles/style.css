@@ -33,31 +33,31 @@ body {
   padding: 0.5rem;
 }
 
-.section.input {
+.sectionInput {
   background-color: #fff;
 }
 
-.section.input .header,
+.sectionInput .header,
 .listHeader,
-.archive-header {
+.archiveHeader {
   background: linear-gradient(to right, #000, rgb(25, 25, 112));
   padding: 0.5rem;
 }
 
-.section.input .header .title,
+.sectionInput .header .title,
 .listHeader h2,
-.archive-header h2 {
+.archiveHeader h2 {
   font-size: 1.5em;
   font-weight: bold;
   color: #fff;
 }
 
-.form-group {
+.formGroup {
   padding: 0.5rem;
 }
 
-.form-group input,
-.form-group textarea {
+.formGroup input,
+.formGroup textarea {
   width: 100%;
   height: 3rem;
   border: none;
@@ -71,30 +71,30 @@ body {
   border-radius: 0.25rem;
 }
 
-.form-group input:hover,
-.form-group textarea:hover,
+.formGroup input:hover,
+.formGroup textarea:hover,
 .input-search:hover {
   background-color: rgb(179, 233, 252);
   color: rgb(39, 39, 39);
 }
 
-.form-group input:focus,
-.form-group textarea:focus,
+.formGroup input:focus,
+.formGroup textarea:focus,
 .input-search:focus {
   background-color: rgb(179, 233, 252);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.max-title {
+.maxTitle {
   color: rgb(119, 119, 119);
   font-size: 1rem;
 }
 
-.form-group textarea {
+.formGroup textarea {
   height: 20rem;
 }
 
-.form-group label h3 {
+.formGroup label h3 {
   font-size: 1.2rem;
   font-weight: 600;
   color: rgb(69, 68, 68);
@@ -130,7 +130,7 @@ body {
   align-items: center;
 }
 
-.note-list {
+.noteList {
   padding: 0.5rem;
   background-color: #fff;
   display: flex;

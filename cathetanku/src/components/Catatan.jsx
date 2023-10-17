@@ -7,13 +7,13 @@ import TitleCatatan from "../components/TitleCatatan";
 
 const Catatan = () => {
   const [initialData, setInitialData] = useState(getInitialData());
-  const [note, setNote] = useState(initialData);
+  const [catatan, setCatatan] = useState(initialData);
   const [searchTerm, setSearchTerm] = useState("");
-  const message = document.querySelector(".message.noteList");
+  const message = document.querySelector(".message.catatanList");
 
   const inputCatatanHandler = ({ title, body }) => {
-    let newNote = [
-      ...note,
+    let newCatatan = [
+      ...catatan,
       {
         id: +new Date(),
         title,
@@ -22,14 +22,14 @@ const Catatan = () => {
         archived: false,
       },
     ];
-    setNote(newNote);
-    setInitialData(newNote);
+    setCatatan(newCatatan);
+    setInitialData(newCatatan);
   };
 
-  const deleteNoteHandler = (id) => {
-    let filteredNote = note.filter((note) => note.id !== id);
-    setNote(filteredNote);
-    setInitialData(filteredNote);
+  const deleteCatatanHandler = (id) => {
+    let filteredCatatan = catatan.filter((catatan) => catatan.id !== id);
+    setCatatan(filteredCatatan);
+    setInitialData(filteredCatatan);
     message.innerText = "Catatan Dihapus";
     message.classList.add("empty");
     setTimeout(() => {
@@ -38,16 +38,16 @@ const Catatan = () => {
     }, 3000);
   };
 
-  const archiveNoteHandler = (id) => {
-    setNote(
-      note.map((note) => {
-        if (note.id === id) {
-          note.archived = !note.archived;
+  const archiveCatatanHandler = (id) => {
+    setCatatan(
+      catatan.map((catatan) => {
+        if (catatan.id === id) {
+          catatan.archived = !catatan.archived;
         }
-        return note;
+        return catatan;
       })
     );
-    setInitialData(note);
+    setInitialData(catatan);
     message.innerText = "Sukses Nih Bro";
     message.classList.add("success");
     setTimeout(() => {
@@ -56,38 +56,39 @@ const Catatan = () => {
     }, 3000);
   };
 
-  const resetNoteHandler = () => {
-    setNote(initialData);
+  const resetCatatanHandler = () => {
+    setCatatan(initialData);
   };
+
   const searchCatatanHandler = (searchTitle) => {
-    resetNoteHandler();
+    resetCatatanHandler();
     setSearchTerm(searchTitle);
   };
 
   return (
-    <>
-      <header className="note">
+    <div>
+      <header className="catatan">
         <h1 className="title">CathetanKu</h1>
       </header>
 
-      <main className="noteMain">
+      <main className="catatanMain">
         <InputCatatan addInput={inputCatatanHandler} />
         <section className="sectionList">
           <header className="listHeader">
             <TitleCatatan />
             <SearchCatatan onSearchCatatan={searchCatatanHandler} />
           </header>
-          <span className="message noteList"></span>
-          <ListCatatan searchTerm={searchTerm} notes={note.filter((note) => !note.archived)} onDeleteNote={deleteNoteHandler} onArchiveNote={archiveNoteHandler} />
+          <span className="message catatanList"></span>
+          <ListCatatan searchTerm={searchTerm} catatans={catatan.filter((catatan) => !catatan.archived)} onDeleteCatatan={deleteCatatanHandler} onArchiveCatatan={archiveCatatanHandler} />
         </section>
         <section className="sectionArchive">
           <header className="archiveHeader">
             <TitleCatatan title="Arsip" />
           </header>
-          <ListCatatan searchTerm={searchTerm} notes={note.filter((note) => note.archived)} onDeleteNote={deleteNoteHandler} onArchiveNote={archiveNoteHandler} />
+          <ListCatatan searchTerm={searchTerm} catatans={catatan.filter((catatan) => catatan.archived)} onDeleteCatatan={deleteCatatanHandler} onArchiveCatatan={archiveCatatanHandler} />
         </section>
       </main>
-    </>
+    </div>
   );
 };
 

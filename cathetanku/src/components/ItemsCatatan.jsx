@@ -2,21 +2,21 @@ import React from "react";
 import { showFormattedDate } from "../utils/InitialData";
 
 const ItemsCatatan = (props) => {
-  const { id, title, body, createdAt, onDeleteNote, archived, onArchiveNote } = props;
+  const { id, title, body, createdAt, onDeleteCatatan, archived, onArchiveCatatan } = props;
 
   const deleteHandler = () => {
-    onDeleteNote(id);
+    onDeleteCatatan(id);
   };
 
   const archiveHandler = () => {
-    onArchiveNote(id);
+    onArchiveCatatan(id);
   };
 
   return (
-    <li className="noteItem">
+    <li className="catatanItem">
       <article>
-        <header className="noteItemsHeader">
-          <h4 className="noteItemsTitle">{title}</h4>
+        <header className="catatanItemsHeader">
+          <h4 className="catatanItemsTitle">{title}</h4>
           <small>{showFormattedDate(createdAt)}</small>
         </header>
         <p>{body}</p>

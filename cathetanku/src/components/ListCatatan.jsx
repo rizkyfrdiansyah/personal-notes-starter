@@ -2,22 +2,21 @@ import React from "react";
 import ItemsCatatan from "./ItemsCatatan";
 
 const ListCatatan = (props) => {
-  const { notes, onDeleteNote, onArchiveNote, searchTerm } = props;
-  let renderedNotes = "";
+  const { catatans, onDeleteCatatan, onArchiveCatatan, searchTerm } = props;
+  let renderedCatatans = "";
 
-  if (notes.length > 0) {
+  if (catatans.length > 0) {
     if (searchTerm !== "") {
-      let filteredNote = notes.filter((note) => note.title.toLowerCase().includes(searchTerm.toLowerCase()));
-      renderedNotes = filteredNote.map((note) => <ItemsCatatan key={note.id} {...note} onDeleteNote={onDeleteNote} onArchiveNote={onArchiveNote} />);
+      let filteredCatatan = catatans.filter((catatan) => catatan.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      renderedCatatans = filteredCatatan.map((catatan) => <ItemsCatatan key={catatan.id} {...catatan} onDeleteCatatan={onDeleteCatatan} onArchiveCatatan={onArchiveCatatan} />);
     } else {
-      renderedNotes = notes.map((note) => {
-        return <ItemsCatatan key={note.id} {...note} onDeleteNote={onDeleteNote} onArchiveNote={onArchiveNote} />;
-      });
+      renderedCatatans = catatans.map((catatan) => <ItemsCatatan key={catatan.id} {...catatan} onDeleteCatatan={onDeleteCatatan} onArchiveCatatan={onArchiveCatatan} />);
     }
   } else {
-    return <h5 className="emptyNotesArchive">Catatan Kosong Dalam Arsip</h5>;
+    return <h5 className="emptyCatatanArchive">Catatan Kosong Dalam Arsip</h5>;
   }
-  return <ul className="noteList">{renderedNotes}</ul>;
+
+  return <ul className="catatanList">{renderedCatatans}</ul>;
 };
 
 export default ListCatatan;

@@ -7,15 +7,15 @@
 html,
 body {
   font-family: "Inter", sans-serif;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(255, 255, 255);
 }
 
-.note {
+.catatan {
   background: linear-gradient(to right, #000, rgb(47, 79, 79));
   padding: 0.5rem;
 }
 
-.note .title {
+.catatan .title {
   font-size: 2em;
   font-weight: bold;
   color: #fff;
@@ -30,7 +30,7 @@ body {
   outline: none;
 }
 
-.noteMain {
+.catatanMain {
   padding: 0.5rem;
 }
 
@@ -75,19 +75,19 @@ body {
 .formGroup input:hover,
 .formGroup textarea:hover,
 .inputSearch:hover {
-  background-color: rgb(254, 228, 225);
+  background-color: rgb(220, 220, 220);
   color: rgb(39, 39, 39);
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus,
 .inputSearch:focus {
-  background-color: rgb(254, 228, 225);
+  background-color: rgb(220, 220, 220);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .maxTitle {
-  color: rgb(119, 119, 119);
+  color: rgb(255, 0, 0);
   font-size: 1rem;
 }
 
@@ -131,7 +131,7 @@ body {
   align-items: center;
 }
 
-.noteList {
+.catatanList {
   padding: 0.5rem;
   background-color: #fff;
   display: flex;
@@ -139,7 +139,7 @@ body {
   flex-wrap: wrap;
 }
 
-.noteItem {
+.catatanItem {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 30%;
   list-style: none;
@@ -152,13 +152,13 @@ body {
   flex-direction: column;
 }
 
-.noteItem:hover {
+.catatanItem:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: rgb(250, 240, 230);
   color: rgb(39, 39, 39);
 }
 
-.noteItemsHeader {
+.catatanItemsHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -166,9 +166,6 @@ body {
   padding: 0.5rem;
   border-radius: 0.25rem;
   margin-bottom: 0.5rem;
-}
-
-.noteItemsHeader {
   font-size: 1.2rem;
   font-weight: 600;
   color: rgb(29, 43, 70);
@@ -179,7 +176,7 @@ small {
   color: rgb(119, 119, 119);
 }
 
-.emptyNotesArchive {
+.emptyCatatanArchive {
   text-align: center;
   padding: 0.5rem;
 }
@@ -234,7 +231,7 @@ small {
 }
 
 @media only screen and (max-width: 1024px) {
-  .noteItem {
+  .catatanItem {
     width: 100%;
   }
 
@@ -242,15 +239,15 @@ small {
     width: 50%;
   }
 
-  .noteList {
+  .catatanList {
     padding: 0.5rem;
   }
 
-  .noteItemsHeader {
+  .catatanItemsHeader {
     font-size: 1rem;
   }
 
-  .small {
+  small {
     font-size: 0.7rem;
   }
 
